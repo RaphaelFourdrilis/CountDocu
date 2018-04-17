@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gisgraphy setup</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.4/css/uikit.gradient.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="uikit.js"></script>
+        <script src="scripts.js"></script>
+        <script src="jquery.sticky-kit.js "></script>
+
+        <meta name="generator" content="pandoc-uikit" />
+                        <title>Gisgraphy setup</title>
+        <style type="text/css">code{white-space: pre;}</style>
+                        <style type="text/css">
+            a.sourceLine { display: inline-block; line-height: 1.25; }
+            a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+            a.sourceLine:empty { height: 1.2em; position: absolute; }
+            .sourceCode { overflow: visible; }
+            code.sourceCode { white-space: pre; position: relative; }
+            div.sourceCode { margin: 1em 0; }
+            pre.sourceCode { margin: 0; }
+            @media screen {
+            div.sourceCode { overflow: auto; }
+            }
+            @media print {
+            code.sourceCode { white-space: pre-wrap; }
+            a.sourceLine { text-indent: -1em; padding-left: 1em; }
+            }
+            pre.numberSource a.sourceLine
+              { position: relative; }
+            pre.numberSource a.sourceLine:empty
+              { position: absolute; }
+            pre.numberSource a.sourceLine::before
+              { content: attr(data-line-number);
+                position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+                border: none; pointer-events: all;
+                -webkit-touch-callout: none; -webkit-user-select: none;
+                -khtml-user-select: none; -moz-user-select: none;
+                -ms-user-select: none; user-select: none;
+                padding: 0 4px; width: 4em;
+                color: #aaaaaa;
+              }
+            pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+            div.sourceCode
+              {  }
+            @media screen {
+            a.sourceLine::before { text-decoration: underline; }
+            }
+            code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+            code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+            code span.at { color: #7d9029; } /* Attribute */
+            code span.bn { color: #40a070; } /* BaseN */
+            code span.bu { } /* BuiltIn */
+            code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+            code span.ch { color: #4070a0; } /* Char */
+            code span.cn { color: #880000; } /* Constant */
+            code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+            code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+            code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+            code span.dt { color: #902000; } /* DataType */
+            code span.dv { color: #40a070; } /* DecVal */
+            code span.er { color: #ff0000; font-weight: bold; } /* Error */
+            code span.ex { } /* Extension */
+            code span.fl { color: #40a070; } /* Float */
+            code span.fu { color: #06287e; } /* Function */
+            code span.im { } /* Import */
+            code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+            code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+            code span.op { color: #666666; } /* Operator */
+            code span.ot { color: #007020; } /* Other */
+            code span.pp { color: #bc7a00; } /* Preprocessor */
+            code span.sc { color: #4070a0; } /* SpecialChar */
+            code span.ss { color: #bb6688; } /* SpecialString */
+            code span.st { color: #4070a0; } /* String */
+            code span.va { color: #19177c; } /* Variable */
+            code span.vs { color: #4070a0; } /* VerbatimString */
+            code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        </style>
+                                                </head>
+
+    <body>
+
+
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+                        <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-1-1">
+                    <h1 class="uk-heading-large">Gisgraphy setup</h1>
+                                                        </div>
+            </div>
+            
+            <div class="uk-grid" data-uk-grid-margin >          
+                <div class="uk-width-medium-1-4">
+                    <div class="uk-overflow-container" data-uk-sticky="{top:25,media: 768}">
+                        <div class="uk-panel uk-panel-box menu-begin" >
+
+                                                        <ul>
+                            <li><a href="#prerequisites">Prerequisites</a><ul>
+                            <li><a href="#oracle-jdk-8">Oracle JDK 8</a></li>
+                            <li><a href="#postgres-10">Postgres 10</a></li>
+                            <li><a href="#postgis-2">Postgis 2</a></li>
+                            <li><a href="#gisgraphy">Gisgraphy</a></li>
+                            </ul></li>
+                            <li><a href="#installation">Installation</a><ul>
+                            <li><a href="#get-the-latest-release">Get the latest release</a></li>
+                            <li><a href="#fix-erroneous-jdbc-driver">Fix erroneous jdbc driver</a></li>
+                            <li><a href="#initialize-the-databse">Initialize the databse</a></li>
+                            <li><a href="#start-gisgraphy">Start Gisgraphy</a></li>
+                            </ul></li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-medium-3-4">
+<h1 id="prerequisites">Prerequisites</h1>
+<h2 id="oracle-jdk-8">Oracle JDK 8</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">wget</span> --no-cookies --no-check-certificate --header <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="st">&quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot;</span> <span class="kw">\</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="st">&quot;http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.rpm&quot;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"> </a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">sudo</span> yum localinstall jdk-8u161-linux-x64.rpm</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">rm</span> ~/jdk-8u161-linux-x64.rpm</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co"># Test if correctly installed:</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">java -version</a></code></pre></div>
+<h2 id="postgres-10">Postgres 10</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb2-1" data-line-number="1">rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">yum <span class="kw">install</span> postgresql10-server postgresql10</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">/usr/pgsql-10/bin/postgresql-10-setup initdb</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">systemctl <span class="kw">enable</span> postgresql-10.service</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">systemctl start postgresql-10.service</a></code></pre></div>
+<h2 id="postgis-2">Postgis 2</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb3-1" data-line-number="1">yum <span class="kw">install</span> epel-release</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">yum <span class="kw">install</span> postgis2_10</a></code></pre></div>
+<h2 id="gisgraphy">Gisgraphy</h2>
+<p>Installation instructions: https://www.gisgraphy.com/documentation/installation/setuplinux.php</p>
+<ol type="1">
+<li><p>Connect to postgres user then</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb4-1" data-line-number="1">createdb gisgraphy</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">createuser --interactive</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co"># Inside the new prompt, type username:</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">gisgraphy</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co"># Then accept as dbadmin</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">y</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">psql -d gisgraphy -f /usr/share/pgsql/contrib/postgis/2.4/postgis.sql</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">psql -d gisgraphy -f /usr/share/pgsql/contrib/postgis/2.4/spatial_ref_sys.sql</a></code></pre></div></li>
+<li><p>Create new gisgraphy user (linux)</p></li>
+<li><p>While still connected as postgres:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb5-1" data-line-number="1">psql</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co"># Then inside psql prompt:</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sqlpostgresql"><code class="sourceCode sqlpostgresql"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">ALTER</span> <span class="kw">ROLE</span> gisgraphy <span class="kw">WITH</span> <span class="kw">ENCRYPTED</span> <span class="kw">PASSWORD</span> <span class="st">&#39;password&#39;</span>;</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">PRIVILEGES</span> <span class="kw">ON</span> <span class="kw">DATABASE</span> gisgraphy <span class="kw">TO</span> gisgraphy;</a></code></pre></div></li>
+<li><p>Open pg_hba.conf in postgres install dir and add these before all other similar lines:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode ini"><code class="sourceCode ini"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="dt">local  all     all                                        password</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="dt">host   all     all    127.0.0.1         255.255.255.255   password</span></a></code></pre></div></li>
+<li><p>De-acivate firewalld</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb8-1" data-line-number="1">systemctl <span class="kw">disable</span> firewalld</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">systemctl stop firewalld</a></code></pre></div></li>
+</ol>
+<h1 id="installation">Installation</h1>
+<h2 id="get-the-latest-release">Get the latest release</h2>
+<p>First, connect as the <code>gisgraphy</code> user and <a href="https://www.gisgraphy.com/download/index.php">download the latest Gisgraphy release</a>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Direct link to 5.0-beta2</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">wget</span> http://download.gisgraphy.com/releases/gisgraphy-5.0-beta2.zip</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co"># Extract wherever you want</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">unzip</span> gisgraphy-5.0-beta2.zip</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="kw">rm</span> gisgraphy-5.0-beta2.zip</a></code></pre></div>
+<h2 id="fix-erroneous-jdbc-driver">Fix erroneous jdbc driver</h2>
+<p>Then, until the Gisgraphy developpers change this themselves, you have to replace some dependencies in <code>gisgraphy_install_dir/webapps/ROOT/WEB-INF/lib</code>.</p>
+<ul>
+<li><p>Go to <a href="https://jar-download.com/?detail_search=g:%22org.springframework%22%20AND%20a:%22spring-jdbc%22&amp;search_type=av&amp;a=spring-jdbc">this website</a> and download version <code>5.0.X</code>.</p></li>
+<li><p>Then, go to <a href="https://jar-download.com/?detail_search=g:%22org.postgresql%22%20AND%20a:%22postgresql%22&amp;search_type=av&amp;a=postgresql">this website</a> and download version <code>42.2.X</code> for JRE 8+ (<strong>not</strong> for JRE 6 or 7)</p></li>
+</ul>
+<p>You will probably have to use WinSCP or any equivalent, since the website doesn’t provide direct links; the urls are re-generated every time …</p>
+<h2 id="initialize-the-databse">Initialize the databse</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># From inside the extracted gisgraphy release</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2">psql -d gisgraphy -f sql/create_tables.sql</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">psql -d gisgraphy -f sql/insert_users.sql</a></code></pre></div>
+<p>Once this is done, open <code>webapps/ROOT/WEB-INF/classes/jdbc.properties</code> in your favorite editor and replace the existing user and password in both places it is required in this file by the once you chose when creating the gisgraphy user.</p>
+<blockquote>
+<p>Note that both the postgresql gisgraphy user and the unix one must have the same password</p>
+</blockquote>
+<h2 id="start-gisgraphy">Start Gisgraphy</h2>
+<p>Go back to the root of the Gisgraphy distribution and start the service</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode zsh"><code class="sourceCode zsh"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">chmod</span> +x *.sh</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">./launch.sh</a></code></pre></div>                    
+                </div>
+            </div>
+            <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+        </div>
+    </body>
+</html>
